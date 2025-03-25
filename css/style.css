@@ -71,11 +71,22 @@ section .list .item {
   transition: opacity 0.5s, transform 0.5s;
 }
 
-
 section .list .item:not(.active) {
   opacity: 0;
   transform: translateY(40%);
   transition-delay: 0.3s;
+}
+@keyframes girar-eixo-Y {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg);
+  }
+}
+
+.item.active .car-imagem img {
+  animation: girar-eixo-Y 1s;
 }
 
 .car-imagem {
@@ -88,7 +99,6 @@ section .list .item:not(.active) {
 .car-imagem img {
   width: 70%;
   max-width: 300px;
-  transform: rotate(0deg);
 }
 
 .content {
